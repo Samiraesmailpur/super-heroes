@@ -43,7 +43,6 @@ const Create = () => {
       toast.success("Hero created successfully!");
       navigate("/");
     } catch (error) {
-      console.error("Error creating hero:", error);
       toast.error(
         "Sorry, there was an error while creating the hero. Please try again."
       );
@@ -68,7 +67,7 @@ const Create = () => {
 
   return (
     <Container>
-      <Form onSubmit={handleSaveClick}>
+      <Form>
         <Label>
           Nickname:
           <Input
@@ -128,20 +127,8 @@ const Create = () => {
             required
           />
         </Label>
-        <Button>Save</Button>
+        <Button onClick={handleSaveClick}>Save</Button>
       </Form>
-      {/* <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      /> */}
     </Container>
   );
 };
